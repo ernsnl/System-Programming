@@ -1,0 +1,34 @@
+mov eax, [ebp+16]
+pop ebp
+ret
+mov edx, '0'
+mov [eax], edx
+mov edx, '1'
+mov [eax + 4], edx
+mov ecx, [eax + 4]
+cmp ecx, '1'
+je TT
+mov eax, 255
+jmp END45
+TT:
+mov eax, 127
+jmp END45
+END45:
+pop ebp
+ret
+
+mov eax, '1'
+xor eax, [edx]
+jz TT
+mov eax, '1'
+add [edx], eax
+mov eax, edx
+jmp END45
+TT:
+mov eax, '1'
+sub [edx], eax
+mov eax, edx
+jmp END45
+END45:
+pop ebp
+ret

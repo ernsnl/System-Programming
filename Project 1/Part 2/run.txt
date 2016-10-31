@@ -1,0 +1,5 @@
+clear
+nasm -f elf32  rule.asm -o rule.o
+gcc -c  main.c -o main.o
+gcc  rule.o main.o -o gorgi
+./gorgi matrix.txt rule.txt

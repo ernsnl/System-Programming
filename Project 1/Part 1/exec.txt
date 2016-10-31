@@ -1,0 +1,9 @@
+nasm -f elf32 -g rule.asm -o rule.o
+gcc -c -g main.c -o main.o
+gcc -g rule.o main.o -o gorgi
+gdb --args ./gorgi file.txt
+
+nasm -f elf32  rule.asm -o rule.o
+gcc -c  main.c -o main.o
+gcc  rule.o main.o -o gorgi
+./gorgi file.txt
